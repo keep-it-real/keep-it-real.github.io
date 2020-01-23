@@ -40,27 +40,27 @@ const smoothScroll = (target) =>
         if (target === scrollContainer) break;
         targetY += target.offsetTop;
     } 
-	while (target = target.offsetParent);
-	const pixelsPerStep = Math.max(MIN_PIXELS_PER_STEP, Math.abs(targetY - scrollContainer.scrollTop) / MAX_SCROLL_STEPS);
-	const isUp = targetY < scrollContainer.scrollTop;
-    	const stepFunc = () => 
+    while (target = target.offsetParent);
+    const pixelsPerStep = Math.max(MIN_PIXELS_PER_STEP, Math.abs(targetY - scrollContainer.scrollTop) / MAX_SCROLL_STEPS);
+    const isUp = targetY < scrollContainer.scrollTop;
+    const stepFunc = () => 
+    {
+	if (isUp)
 	{
-		if (isUp)
+		scrollContainer.scrollTop = Math.max(targetY, scrollContainer.scrollTop - pixelsPerStep);
+		if (scrollContainer.scrollTop <= targetY)
 		{
-			scrollContainer.scrollTop = Math.max(targetY, scrollContainer.scrollTop - pixelsPerStep);
-			if (scrollContainer.scrollTop <= targetY)
-			{
-				return;
-			}
+			return;
 		}
-		else
+	}
+	else
+	{
+		scrollContainer.scrollTop = Math.min(targetY, scrollContainer.scrollTop + pixelsPerStep);
+		if (scrollContainer.scrollTop >= targetY) 
 		{
-			scrollContainer.scrollTop = Math.min(targetY, scrollContainer.scrollTop + pixelsPerStep);
-			if (scrollContainer.scrollTop >= targetY) 
-			{
-				return;
-			}
+			return;
 		}
+	}
         window.requestAnimationFrame(stepFunc);
     };
     window.requestAnimationFrame(stepFunc);
