@@ -28,22 +28,22 @@ const smoothScroll = (target) =>
     const MAX_SCROLL_STEPS = 60;
     let scrollContainer = target;
     do 
-	{
+    {
         scrollContainer = scrollContainer.parentNode;
         if (!scrollContainer) return;
         scrollContainer.scrollTop += 1;
     } 
-	while (scrollContainer.scrollTop === 0);
+    while (scrollContainer.scrollTop === 0);
     let targetY = 0;
     do 
-	{
+    {
         if (target === scrollContainer) break;
         targetY += target.offsetTop;
     } 
 	while (target = target.offsetParent);
 	const pixelsPerStep = Math.max(MIN_PIXELS_PER_STEP, Math.abs(targetY - scrollContainer.scrollTop) / MAX_SCROLL_STEPS);
 	const isUp = targetY < scrollContainer.scrollTop;
-    const stepFunc = () => 
+    	const stepFunc = () => 
 	{
 		if (isUp)
 		{
@@ -105,7 +105,7 @@ const hide = () =>
 {
 	for(let i = 0; i < allTab.length; i++)
 	{
-			allTab[i].style.display = "none";
+		allTab[i].style.display = "none";
 	}
 }
 
@@ -119,7 +119,7 @@ const showAllProjects = () =>
 {
 	for(let i = 0; i < allTab.length; i++)
 	{
-			allTab[i].style.display = "block";
+		allTab[i].style.display = "block";
 	}
 }
 
