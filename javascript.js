@@ -115,15 +115,7 @@ const showProjects = (project) =>
 	show(project);
 }
 
-const showAllProjects = () =>
-{
-	for(let i = 0; i < allTab.length; i++)
-	{
-		allTab[i].style.display = "block";
-	}
-}
-
-allBtn.addEventListener("click", () => showAllProjects());
+allBtn.addEventListener("click", () => showProjects(allTab));
 javaBtn.addEventListener("click", () => showProjects(javaTab));
 jfxBtn.addEventListener("click", () => showProjects(jfxTab));
 htmlBtn.addEventListener("click", () => showProjects(htmlTab));
