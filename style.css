@@ -72,7 +72,7 @@ header .img
 	font-size: 20px;
 }
 
-.menu li a:hover, .languages li a:hover, .icon-up-open:hover 
+.menu li a:hover, .languages li a:hover 
 {
 	background: linear-gradient(to top, #43cea2, #185a9d);
 	-webkit-background-clip: text;
@@ -365,16 +365,13 @@ h4
 .icon-facebook-squared, .icon-mail, .icon-github-circled
 {
 	font-size: 110px;
-	background: linear-gradient(to top, #43cea2, #185a9d);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	color: #43cea2;
+	transition: 1s linear;
 }
 
-.icon-facebook-squared:hover, .icon-mail:hover, .icon-github-circled:hover
+.icon-facebook-squared:hover, .icon-mail:hover, .icon-github-circled:hover, .icon-up-open:hover
 {
-	background: #43cea2;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;	
+	color: #185a9d;
 }
 
 .icon-up-open 
@@ -670,5 +667,3 @@ footer p span
 		font-size: 12px;
 	}
 }
-
-
